@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
+            rel="stylesheet">
+        <link rel="stylesheet" href="style.css">
+    <title>Calculo de Bidones</title>
+</head>
+
+<body>
+    <img src="img/wasser.png" alt="fondo" height=200px">
+    <h1> Calcular el Total de Bidones </h1> 
+    <label for="tipoBidon">Seleccione el tipo de bidón:</label>
+    <select id="tipoBidon">
+        <option value="6">Bidones desc de 6 litros (20 bidones por bolson)</option>
+        <option value="8">Bidones desc de 8 litros (20 bidones por bolson)</option>
+        <option value="5">Bidones desc de 5 litros (25 bidones por bolson)</option>
+        <option value="10">Bidones desc de 10 litros (15 bidones por bolson)</option>
+        <option value="20">Bidones de 20 litros (5 bidones por bolson)</option>
+        <option value="12">Bidones de de poli 12 litros (7 bidones por bolson)</option>
+        <option value="11">Bidones de pet 10 litros (5 bidones por bolson)</option>
+    </select>
+
+    <label for="filas">Ingrese la cantidad de filas:</label>
+    <input type="number" id="filas" placeholder="Cantidad de filas" min="1">
+
+    <button onclick="calcularBidones()">Calcular</button>
+
+    <h2 id="resultado"></h2>
+    
+
+    <script src="calcularBidones.js"> </script>
+
+</body>
+</html>

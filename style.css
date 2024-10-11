@@ -1,0 +1,53 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 20px;
+    color: #eef6f9;
+}
+
+body {
+    background: url(/wasser.png);
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%), url(/wasser.png);
+    height: 100vh;
+    display: block;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 10px;
+}
+select, input {
+    margin: 10px 0;
+    display: block;
+    color: #595d92;
+}
+
+label{
+    margin: 10px 0;
+    display: block;
+    color: #eef6f9;
+}
+
+button {
+    margin-top: 20px;
+    color: #595d92;
+}
+
+
+.contenedor {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.imagen-fondo {
+    width: 10%;
+    height: auto;
+}
+
+.texto-superpuesto {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-weight: bold;
+}
