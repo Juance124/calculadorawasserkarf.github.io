@@ -24,10 +24,12 @@
         <option value="11">Bidones de pet 10 litros (5 bidones por bolson)</option>
     </select>
 
-    <label for="filas">Ingrese la cantidad de filas:</label>
-    <input type="number" id="filas" placeholder="Cantidad de filas" min="1">
+    <label for="filas">Ingrese la cantidad a calcular:</label>
+    <input type="number" id="cantidad" placeholder="Cantidad a calcular" min="1">
 
-    <button onclick="calcularBidones()">Calcular</button>
+    <button onclick="calcular(1)">Calcular filas</button>
+
+    <button onclick="calcular(2)">Calcular bidones</button>
 
     <h2 id="resultado"></h2>
     
