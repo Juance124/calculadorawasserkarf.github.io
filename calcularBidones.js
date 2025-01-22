@@ -5,7 +5,13 @@ function calcularBidones() {
     // Obtener la cantidad de filas
     const filas = parseInt(document.getElementById('filas').value);
 
-    // Definir bolsones por fila
+    // Validar que la cantidad de filas sea un número válido
+    if (isNaN(filas) || filas <= 0) {
+        document.getElementById('resultado').innerText = "Por favor, ingrese una cantidad válida de filas.";
+        return;
+    }
+
+    // Definir bolsones por fila según el tipo de bidón
     let bolsonesPorFila;
     switch (tipoBidon) {
         case '6':
@@ -20,7 +26,7 @@ function calcularBidones() {
             bolsonesPorFila = 30;
             break;
         default:
-            bidonesPorBolson = 0;
+            bolsonesPorFila = 0;
     }
 
     // Definir la cantidad de bidones por bolson según el tipo de bidón
@@ -45,6 +51,12 @@ function calcularBidones() {
             break;
         default:
             bidonesPorBolson = 0;
+    }
+
+    // Verificar si se asignaron valores correctos
+    if (bolsonesPorFila === 0 || bidonesPorBolson === 0) {
+        document.getElementById('resultado').innerText = "Seleccione un tipo de bidón válido.";
+        return;
     }
 
     // Calcular el total de bidones
