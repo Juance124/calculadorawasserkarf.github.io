@@ -1,33 +1,18 @@
-function calcularBidones() {
+function calcular(opcion) {
     // Obtener el tipo de bidón seleccionado
     const tipoBidon = document.getElementById('tipoBidon').value;
     
-    // Obtener la cantidad de filas
-    const filas = parseInt(document.getElementById('filas').value);
+    // Obtener la cantidad ingresada
+    const cantidad = parseInt(document.getElementById('cantidad').value);
 
-    // Validar que la cantidad de filas sea un número válido
-    if (isNaN(filas) || filas <= 0) {
-        document.getElementById('resultado').innerText = "Por favor, ingrese una cantidad válida de filas.";
+    // Verificar si la cantidad es válida
+    if (isNaN(cantidad) || cantidad <= 0) {
+        document.getElementById('resultado').innerText = "Por favor, ingrese una cantidad válida.";
         return;
     }
 
     // Definir bolsones por fila según el tipo de bidón
-    let bolsonesPorFila;
-    switch (tipoBidon) {
-        case '6':
-        case '8':
-        case '5':
-        case '10':
-            bolsonesPorFila = 25;
-            break;
-        case '20':
-        case '12':
-        case '11':
-            bolsonesPorFila = 30;
-            break;
-        default:
-            bolsonesPorFila = 0;
-    }
+    let bolsonesPorFila = (tipoBidon === '20' || tipoBidon === '12' || tipoBidon === '11') ? 30 : 25;
 
     // Definir la cantidad de bidones por bolson según el tipo de bidón
     let bidonesPorBolson;
@@ -53,16 +38,29 @@ function calcularBidones() {
             bidonesPorBolson = 0;
     }
 
-    // Verificar si se asignaron valores correctos
     if (bolsonesPorFila === 0 || bidonesPorBolson === 0) {
         document.getElementById('resultado').innerText = "Seleccione un tipo de bidón válido.";
         return;
     }
 
-    // Calcular el total de bidones
-    const totalBidones = bidonesPorBolson * bolsonesPorFila * filas;
+    let resultadoTexto = "";
 
-    // Mostrar el resultado
-    document.getElementById('resultado').innerText = 
-        "El total de bidones para " + filas + " filas es: " + totalBidones;
+    if (opcion === 1) {
+        // Calcular filas necesarias para la cantidad ingresada
+        const bidonesPorFila = bolsonesPorFila * bidonesPorBolson;
+        const filasCompletas = Math.floor(cantidad / bidonesPorFila);
+        const bidonesRestantes = cantidad % bidonesPorFila;
+        const bolsonesSueltos = Math.ceil(bidonesRestantes / bidonesPorBolson);
+
+        resultadoTexto = `Para ${cantidad} bidones necesitas: 
+            ${filasCompletas} filas completas y ${bolsonesSueltos} bolsones sueltos.`;
+
+    } else if (opcion === 2) {
+        // Calcular el total de bidones para la cantidad de filas ingresadas
+        const totalBidones = cantidad * bolsonesPorFila * bidonesPorBolson;
+        resultadoTexto = `El total de bidones para ${cantidad} filas es: ${totalBidones}.`;
+    }
+
+    // Mostrar resultado en la página
+    document.getElementById('resultado').innerText = resultadoTexto;
 }
