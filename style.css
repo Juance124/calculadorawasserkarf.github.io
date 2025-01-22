@@ -1,53 +1,82 @@
+/* Reset global */
 * {
     box-sizing: border-box;
     margin: 0;
-    padding: 20px;
-    color: #eef6f9;
+    padding: 0;
 }
 
+/* Estilos del cuerpo */
 body {
-    background: url(/wasser.png);
-    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%), url(/wasser.png);
+    background: linear-gradient(#1354A5 0%, #041832 33.33%, #041832 66.67%, #01080E 100%), 
+                url('wasser.png');
+    background-size: cover;
+    background-position: center;
     height: 100vh;
-    display: block;
+    font-family: 'Inter', sans-serif;
+    display: flex;
     align-items: center;
     justify-content: center;
-    margin: 10px 10px;
-}
-select, input {
-    margin: 10px 0;
-    display: block;
-    color: #595d92;
-}
-
-label{
-    margin: 10px 0;
-    display: block;
     color: #eef6f9;
+    padding: 20px;
 }
 
-button {
-    margin-top: 20px;
-    color: #595d92;
-}
-
-
+/* Contenedor principal */
 .contenedor {
-    position: relative;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 30px;
+    border-radius: 10px;
     text-align: center;
-    color: white;
+    width: 100%;
+    max-width: 600px;
 }
 
-.imagen-fondo {
-    width: 10%;
-    height: auto;
+/* Títulos */
+h1 {
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
 }
 
-.texto-superpuesto {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    font-size: 2em;
+/* Etiquetas */
+label {
+    display: block;
+    margin-top: 15px;
+    font-size: 1.2rem;
+}
+
+/* Campos de entrada */
+select, input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    font-size: 1rem;
+    border: 1px solid #1354A5;
+    border-radius: 5px;
+    background: #eef6f9;
+    color: #041832;
+}
+
+/* Botones */
+button {
+    width: 100%;
+    padding: 15px;
+    margin-top: 20px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #1354A5;
+    color: #eef6f9;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #041832;
+}
+
+/* Resultado */
+#resultado {
+    margin-top: 20px;
+    font-size: 1.2rem;
     font-weight: bold;
 }
