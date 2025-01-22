@@ -1,40 +1,39 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap"
-            rel="stylesheet">
-        <link rel="stylesheet" href="style.css">
-    <title>Calculo de Bidones</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@700&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Cálculo de Bidones</title>
 </head>
 
 <body>
-    <h1> Calcular el Total de Bidones </h1> 
-    <label for="tipoBidon">Seleccione el tipo de bidón:</label>
-    <select id="tipoBidon">
-        <option value="6">Bidones desc de 6 litros (20 bidones por bolson)</option>
-        <option value="8">Bidones desc de 8 litros (20 bidones por bolson)</option>
-        <option value="5">Bidones desc de 5 litros (25 bidones por bolson)</option>
-        <option value="10">Bidones desc de 10 litros (15 bidones por bolson)</option>
-        <option value="20">Bidones de 20 litros (5 bidones por bolson)</option>
-        <option value="12">Bidones de de poli 12 litros (7 bidones por bolson)</option>
-        <option value="11">Bidones de pet 10 litros (5 bidones por bolson)</option>
-    </select>
+    <div class="contenedor">
+        <h1>Calcular el Total de Bidones</h1> 
+        
+        <label for="tipoBidon">Seleccione el tipo de bidón:</label>
+        <select id="tipoBidon">
+            <option value="6">Bidones de 6 litros (20 bidones por bolson)</option>
+            <option value="8">Bidones de 8 litros (20 bidones por bolson)</option>
+            <option value="5">Bidones de 5 litros (25 bidones por bolson)</option>
+            <option value="10">Bidones de 10 litros (15 bidones por bolson)</option>
+            <option value="20">Bidones de 20 litros (5 bidones por bolson)</option>
+            <option value="12">Bidones de 12 litros (7 bidones por bolson)</option>
+            <option value="11">Bidones de 10 litros PET (5 bidones por bolson)</option>
+        </select>
 
-    <label for="filas">Ingrese la cantidad a calcular:</label>
-    <input type="number" id="cantidad" placeholder="Cantidad a calcular" min="1">
+        <label for="cantidad">Ingrese la cantidad a calcular:</label>
+        <input type="number" id="cantidad" placeholder="Cantidad a calcular" min="1">
 
-    <button onclick="calcular(1)">Calcular filas</button>
+        <button onclick="calcular(1)">Calcular filas</button>
+        <button onclick="calcular(2)">Calcular bidones</button>
 
-    <button onclick="calcular(2)">Calcular bidones</button>
+        <h2 id="resultado"></h2>
+    </div>
 
-    <h2 id="resultado"></h2>
-    
-
-    <script src="calcularBidones.js"> </script>
-
+    <script src="calcularBidones.js"></script>
 </body>
 </html>
